@@ -33,10 +33,9 @@ const articleSchema = {
 
 const Article = mongoose.model("Article", articleSchema);
 
-app.get("/articles", function (req, res) {
+app.get("/api/articles", function (req, res) {
     Article.find(function (err, foundArticles) {
         res.send(foundArticles);
-        console.log('Articles:', foundArticles)
     });
 });
 
