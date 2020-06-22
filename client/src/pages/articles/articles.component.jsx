@@ -14,7 +14,9 @@ class ArticlesPage extends React.Component {
 
     callApi = async () => {
         const response = await fetch('/api/articles');
+        console.log('response', response)
         const body = await response.json();
+        console.log('body', body)
         if (response.status !== 200) throw Error(body.message);
 
         return body;
