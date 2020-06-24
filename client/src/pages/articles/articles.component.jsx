@@ -23,6 +23,7 @@ class ArticlesPage extends React.Component {
     render() {
         return (
             <div className='shop-page'>
+                Response from API:
                 {JSON.stringify(this.state)}
             </div>
         )
