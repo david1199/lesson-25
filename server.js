@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
+const keys = require('./config/keys')
 
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
@@ -32,7 +33,7 @@ app.post('/payment', (req, res) => {
     });
 });
 
-mongoose.connect("mongodb+srv://admin-david:9yciX!q8w@7k96D@cluster0-fhnuq.mongodb.net/wikiDB", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const articleSchema = {
     title: String,
