@@ -1,0 +1,22 @@
+version: "3"
+services:
+    frontend:
+        container_name: crwn_web
+        build:
+            context: ./client
+            dockerfile: Dockerfile
+        image: david/crwn_web
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./client:/src/app/client/
+    backend:
+        container_name: crwn_server
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: david/crwn_server
+        ports:
+            - "5000:5000"
+        volumes:
+            - ./server:/usr/src/app/server/
